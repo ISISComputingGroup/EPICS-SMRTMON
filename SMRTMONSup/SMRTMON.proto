@@ -1,0 +1,17 @@
+Terminator = '\r';
+ReplyTimeout = 2000;
+
+getStat {
+    out "STAT";
+    in "%f";
+}
+
+getLims { 
+	out "LIMS";
+    in "%f";
+}
+
+getOplm {
+	out "OPLM";
+    in "%f";
+}

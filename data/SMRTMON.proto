@@ -1,0 +1,8 @@
+Terminator = '\r';
+ReplyTimeout = 2000;
+
+getStat {
+    out "STAT";
+    in "%f";
+}
+

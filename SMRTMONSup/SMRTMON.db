@@ -1,0 +1,38 @@
+#
+# Simple database and stream protocol file for basic SCPI (IEEE488.2) commands
+#
+record(bo, "$(P)SIM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "NO")
+    field(ONAM, "YES")
+    field(VAL, "$(RECSIM=0)")
+    field(PINI, "YES")
+}
+
+record(bo, "$(P)DISABLE")
+{
+    field(DESC, "Disable comms")
+    field(PINI, "YES")
+    field(VAL, "$(DISABLE=0)")
+    field(OMSL, "supervisory")
+    field(ZNAM, "COMMS ENABLED")
+    field(ONAM, "COMMS DISABLED")
+}
+
+record(ai, "$(P)TEMP1")
+{
+	field(INP, "@SMRTMON.proto getStat() $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:TEMP1")
+    field(SDIS, "$(P)DISABLE")
+}
+
+record(ai, "$(P)SIM:TEMP1")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
