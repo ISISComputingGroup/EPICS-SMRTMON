@@ -1,5 +1,5 @@
 #
-# Simple database and stream protocol file for basic SCPI (IEEE488.2) commands
+# database file for the HTS magnet Smart Monitor
 #
 record(bo, "$(P)SIM")
 {
@@ -21,16 +21,154 @@ record(bo, "$(P)DISABLE")
     field(ONAM, "COMMS DISABLED")
 }
 
+# Buffer for STAT, LIMS and OPLM commands
+record(calc, "$(P)STATBUFFER")
+{
+	field(CALC, "0")
+}
+
+record(calc, "$(P)LIMSBUFFER")
+{
+	field(CALC, "0")
+}
+
+record(calc, "$(P)OPLMBUFFER")
+{
+	field(CALC, "0")
+}
+
+# STAT, LIMS and OPLM commands
+record(ai, "$(P)STAT")
+{
+	field(INP, "@SMRTMON.proto getStat() $($(P)STATBUFFER) $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:STAT")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)LIMS")
+{
+	field(INP, "@SMRTMON.proto getLims() $($(P)LIMSBUFFER) $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:LIMS")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)OPLM")
+{
+	field(INP, "@SMRTMON.proto getOplm() $($(P)OPLMBUFFER) $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:OPLM")
+    field(SDIS, "$(P)DISABLE")
+}
+
+# Filtered PVs
 record(ai, "$(P)TEMP1")
 {
-	field(INP, "@SMRTMON.proto getStat() $(PORT)")
+	field(INP, "$(P)STATBUFFER.A CP")
     field(SCAN, "1 second")
     field(DTYP, "stream")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP1")
     field(SDIS, "$(P)DISABLE")
 }
+record(ai, "$(P)TEMP2")
+{
+	field(INP, "$(P)STATBUFFER.B CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:TEMP2")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)TEMP3")
+{
+	field(INP, "$(P)STATBUFFER.C CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:TEMP3")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)TEMP4")
+{
+	field(INP, "$(P)STATBUFFER.D CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:TEMP4")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)TEMP5")
+{
+	field(INP, "$(P)STATBUFFER.E CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:TEMP5")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)TEMP6")
+{
+	field(INP, "$(P)STATBUFFER.F CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:TEMP6")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)VOLT1")
+{
+	field(INP, "$(P)STATBUFFER.G CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:VOLT1")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)VOLT2")
+{
+	field(INP, "$(P)STATBUFFER.H CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:VOLT2")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)VOLT3")
+{
+	field(INP, "$(P)STATBUFFER.I CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:VOLT3")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)MI")
+{
+	field(INP, "$(P)STATBUFFER.J CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:MI")
+    field(SDIS, "$(P)DISABLE")
+}
+record(ai, "$(P)STATUS")
+{
+	field(INP, "$(P)STATBUFFER.K CP")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:STATUS")
+    field(SDIS, "$(P)DISABLE")
+}
 
+
+# SIM records
 record(ai, "$(P)SIM:TEMP1")
 {
     field(SCAN, "Passive")
