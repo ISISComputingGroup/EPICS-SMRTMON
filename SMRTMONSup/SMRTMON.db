@@ -400,3 +400,127 @@ record(ai, "$(P)SIM:VOLT3")
     field(SCAN, "Passive")
     field(DTYP, "Soft Channel")
 }
+
+record(ai, "$(P)SIM:TEMP1:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP2:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP3:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP4:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP5:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP6:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:VOLT1:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:VOLT2:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:VOLT3:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+
+record(ai, "$(P)SIM:TEMP1:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP2:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP3:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP4:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP5:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:TEMP6:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:VOLT1:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:VOLT2:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:VOLT3:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+
+record(ai, "$(P)SIM:STATUS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:MI")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:STAT")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(mbbi, "$(P)SIM:MAGNETSTATUS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+
