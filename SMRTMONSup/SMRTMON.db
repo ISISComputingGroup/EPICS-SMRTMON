@@ -10,7 +10,6 @@ record(bo, "$(P)SIM")
     field(VAL, "$(RECSIM=0)")
     field(PINI, "YES")
 }
-
 record(bo, "$(P)DISABLE")
 {
     field(DESC, "Disable comms")
@@ -40,7 +39,7 @@ record(calc, "$(P)OPLMBUFFER")
 # STAT, LIMS and OPLM commands
 record(ai, "$(P)STAT")
 {
-	field(INP, "@SMRTMON.proto getStat() $($(P)STATBUFFER) $(PORT)")
+	field(INP, "@SMRTMON.proto getStat($(P)STATBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
     field(SIML, "$(P)SIM")
@@ -49,7 +48,7 @@ record(ai, "$(P)STAT")
 }
 record(ai, "$(P)LIMS")
 {
-	field(INP, "@SMRTMON.proto getLims() $($(P)LIMSBUFFER) $(PORT)")
+	field(INP, "@SMRTMON.proto getLims($(P)LIMSBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
     field(SIML, "$(P)SIM")
@@ -58,7 +57,7 @@ record(ai, "$(P)LIMS")
 }
 record(ai, "$(P)OPLM")
 {
-	field(INP, "@SMRTMON.proto getOplm() $($(P)OPLMBUFFER) $(PORT)")
+	field(INP, "@SMRTMON.proto getOplm($(P)OPLMBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
     field(SIML, "$(P)SIM")
@@ -70,7 +69,6 @@ record(ai, "$(P)OPLM")
 record(ai, "$(P)TEMP1")
 {
 	field(INP, "$(P)STATBUFFER.A CP")
-    field(SCAN, "1 second")
     field(DTYP, "stream")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP1")
@@ -168,7 +166,6 @@ record(ai, "$(P)STATUS")
 }
 
 # OPLMS
-
 record(ai, "$(P)TEMP1:OPLM")
 {
 	field(INP, "$(P)OPLMBUFFER.A CP")
@@ -252,7 +249,6 @@ record(ai, "$(P)VOLT3:OPLM")
 }
 
 # LIMS
-
 record(ai, "$(P)TEMP1:LIMS")
 {
 	field(INP, "$(P)LIMSBUFFER.A CP")
@@ -336,7 +332,6 @@ record(ai, "$(P)VOLT3:LIMS")
 }
 
 # Enum for magnet status
-
 record(mbbi, "$(P)MAGNETSTATUS")
 {
 	field("INP", "$(P)STATUS")
