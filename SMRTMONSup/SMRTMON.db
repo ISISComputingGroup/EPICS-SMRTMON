@@ -324,22 +324,22 @@ record(ai, "$(P)VOLT3:LIMS")
 }
 
 # Enum for magnet status
-#record(mbbi, "$(P)MAGNETSTATUS")
-#{
-#	field("INP", "$(P)STATUS")
-#    field(SCAN, "1 second")
-#    field(DTYP, "Soft Channel")
-#	field(ZRVL, "0")
-#	field(ONVL, "1")
-#	field(TWVL, "2")
-#	field(THVL, "3")
-#	field(FRVL, "4")
-#	field(ZRST, "")
-#	field(ONST, "Magnet Is At Room Temperature")
-#	field(TWST, "Magnet Is Cooling Down")
-#	field(THST, "Magnet Is At Operating Temperature")
-#	field(FRST, "A Fault Has Occurred")
-#}
+record(mbbi, "$(P)MAGNETSTATUS")
+{
+	field("INP", "$(P)STATUS")
+    field(SCAN, "1 second")
+    field(DTYP, "Soft Channel")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(FRVL, "4")
+	field(ZRST, "")
+	field(ONST, "At Room Temperature")
+	field(TWST, "Cooling Down")
+	field(THST, "At Operating Temperature")
+	field(FRST, "A Fault Has Occurred")
+}
 
 # SIM records
 record(ai, "$(P)SIM:TEMP1")
