@@ -37,29 +37,32 @@ record(calc, "$(P)OPLMBUFFER")
 }
 
 # STAT, LIMS and OPLM commands
-record(ai, "$(P)STAT")
+record(aai, "$(P)STAT")
 {
 	field(INP, "@SMRTMON.proto getStat($(P)STATBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
+	field(NELM, "11")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:STAT")
     field(SDIS, "$(P)DISABLE")
 }
-record(ai, "$(P)LIMS")
+record(aai, "$(P)LIMS")
 {
 	field(INP, "@SMRTMON.proto getLims($(P)LIMSBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
+	field(NELM, "9")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:LIMS")
     field(SDIS, "$(P)DISABLE")
 }
-record(ai, "$(P)OPLM")
+record(aai, "$(P)OPLM")
 {
 	field(INP, "@SMRTMON.proto getOplm($(P)OPLMBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
+	field(NELM, "9")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:OPLM")
     field(SDIS, "$(P)DISABLE")
