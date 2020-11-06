@@ -72,7 +72,6 @@ record(ai, "$(P)MI")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:MI")
     field(SDIS, "$(P)DISABLE")
-	info(INTEREST, "HIGH")
 	info(archive, "VAL")
 }
 record(ai, "$(P)STATUS")
@@ -82,14 +81,13 @@ record(ai, "$(P)STATUS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:STATUS")
     field(SDIS, "$(P)DISABLE")
-	info(INTEREST, "HIGH")
 	info(archive, "VAL")
 }
 
 # Enum for magnet status
 record(mbbi, "$(P)MAGNETSTATUS")
 {
-	field("INP", "$(P)STATUS CP")
+	field("INP", "$(P)STATUS CP MS")
     field(DTYP, "Soft Channel")
 	field(ZRVL, "0")
 	field(ONVL, "1")
@@ -103,6 +101,7 @@ record(mbbi, "$(P)MAGNETSTATUS")
 	field(FRST, "A Fault Has Occurred")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	field(DESC, "The string value of the magnet status")
 }
 
 record(ai, "$(P)SIM:STATUS")

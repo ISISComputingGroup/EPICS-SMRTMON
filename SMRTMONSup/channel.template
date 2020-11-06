@@ -4,6 +4,8 @@
 
 # CHANNEL_NAME - the name of the channel eg TEMP1
 # CALC_LETTER - which value to get from the calc field eg A
+# UNITS - the unit of measurement
+# DESCRIPTION - brief description of record
 
 
 # Filtered PVs
@@ -19,6 +21,8 @@ record(ai, "$(P)$(CHANNEL_NAME)")
 	info(alarm, "SMRTMON")
 	field(HSV, "MINOR")
 	field(HHSV, "MAJOR")
+	field(DESC, "Value of $(DESCRIPTION)")
+	field(EGU, "$(UNITS)")
 }
 
 # OPLMS
@@ -32,6 +36,8 @@ record(ai, "$(P)$(CHANNEL_NAME):OPLM")
 	info(INTEREST, "MEDIUM")
 	info(archive, "VAL")
 	field(FLNK, "$(P)$(CHANNEL_NAME):OPLM_PUSH")
+	field(DESC, "Safe operating limit of $(DESCRIPTION)")
+	field(EGU, "$(UNITS)")
 }
 record(ao, "$(P)$(CHANNEL_NAME):OPLM_PUSH")
 {
@@ -57,6 +63,8 @@ record(ai, "$(P)$(CHANNEL_NAME):LIMS")
 	info(INTEREST, "MEDIUM")
 	info(archive, "VAL")
 	field(FLNK, "$(P)$(CHANNEL_NAME):LIMS_PUSH")
+	field(DESC, "Protection limit of $(DESCRIPTION)")
+	field(EGU, "$(UNITS)")
 }
 
 # SIM records
