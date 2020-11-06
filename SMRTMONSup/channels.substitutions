@@ -1,0 +1,13 @@
+file channel.template {
+
+pattern {P, CHANNEL_NAME, CALC_LETTER}
+{"\$(P)", "TEMP1",           "A",          }
+{"\$(P)", "TEMP2",           "B",          }
+{"\$(P)", "TEMP3",           "C",          }
+{"\$(P)", "TEMP4",           "D",          }
+{"\$(P)", "TEMP5",           "E",          }
+{"\$(P)", "TEMP6",           "F",          }
+{"\$(P)", "VOLT1",           "G",          }
+{"\$(P)", "VOLT2",           "H",          }
+{"\$(P)", "VOLT3",           "I",          }
+}
