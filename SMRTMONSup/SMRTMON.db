@@ -356,8 +356,7 @@ record(ai, "$(P)VOLT3:LIMS")
 # Enum for magnet status
 record(mbbi, "$(P)MAGNETSTATUS")
 {
-	field("INP", "$(P)STATUS")
-    field(SCAN, "1 second")
+	field("INP", "$(P)STATUS CP")
     field(DTYP, "Soft Channel")
 	field(ZRVL, "0")
 	field(ONVL, "1")
