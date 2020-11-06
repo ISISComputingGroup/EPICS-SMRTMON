@@ -67,6 +67,7 @@ record(ai, "$(P)TEMP1")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)TEMP2")
 {
@@ -77,6 +78,7 @@ record(ai, "$(P)TEMP2")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)TEMP3")
 {
@@ -87,6 +89,7 @@ record(ai, "$(P)TEMP3")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)TEMP4")
 {
@@ -97,6 +100,7 @@ record(ai, "$(P)TEMP4")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)TEMP5")
 {
@@ -107,6 +111,7 @@ record(ai, "$(P)TEMP5")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)TEMP6")
 {
@@ -117,6 +122,7 @@ record(ai, "$(P)TEMP6")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)VOLT1")
 {
@@ -127,6 +133,7 @@ record(ai, "$(P)VOLT1")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)VOLT2")
 {
@@ -137,6 +144,7 @@ record(ai, "$(P)VOLT2")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)VOLT3")
 {
@@ -147,6 +155,7 @@ record(ai, "$(P)VOLT3")
     field(SDIS, "$(P)DISABLE")
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
+	info(alarm, "SMRTMON")
 }
 record(ai, "$(P)MI")
 {
