@@ -1,5 +1,5 @@
 Terminator = '\r';
-ReplyTimeout = 2000;
+ReplyTimeout = 500;
 
 getStat {
     out "STAT";
