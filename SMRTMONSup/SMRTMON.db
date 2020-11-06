@@ -60,185 +60,205 @@ record(bi, "$(P)OPLM")
 # Filtered PVs
 record(ai, "$(P)TEMP1")
 {
-	field(INP, "$(P)STATBUFFER.A")
+	field(INP, "$(P)STATBUFFER.A CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP1")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP2")
 {
-	field(INP, "$(P)STATBUFFER.B")
+	field(INP, "$(P)STATBUFFER.B CP")
     field(DTYP, "Soft Channel")
-    field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP2")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP3")
 {
-	field(INP, "$(P)STATBUFFER.C")
+	field(INP, "$(P)STATBUFFER.C CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP3")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP4")
 {
-	field(INP, "$(P)STATBUFFER.D")
+	field(INP, "$(P)STATBUFFER.D CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP4")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP5")
 {
-	field(INP, "$(P)STATBUFFER.E")
+	field(INP, "$(P)STATBUFFER.E CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP5")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP6")
 {
-	field(INP, "$(P)STATBUFFER.F")
+	field(INP, "$(P)STATBUFFER.F CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP6")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT1")
 {
-	field(INP, "$(P)STATBUFFER.G")
+	field(INP, "$(P)STATBUFFER.G CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT1")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT2")
 {
-	field(INP, "$(P)STATBUFFER.H")
+	field(INP, "$(P)STATBUFFER.H CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT2")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT3")
 {
-	field(INP, "$(P)STATBUFFER.I")
+	field(INP, "$(P)STATBUFFER.I CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT3")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)MI")
 {
-	field(INP, "$(P)STATBUFFER.J")
+	field(INP, "$(P)STATBUFFER.J CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:MI")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)STATUS")
 {
-	field(INP, "$(P)STATBUFFER.K")
+	field(INP, "$(P)STATBUFFER.K CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:STATUS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 
 # OPLMS
 record(ai, "$(P)TEMP1:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.A")
+	field(INP, "$(P)OPLMBUFFER.A CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP1:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP2:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.B")
+	field(INP, "$(P)OPLMBUFFER.B CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP2:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP3:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.C")
+	field(INP, "$(P)OPLMBUFFER.C CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP3:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP4:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.D")
+	field(INP, "$(P)OPLMBUFFER.D CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP4:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP5:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.E")
+	field(INP, "$(P)OPLMBUFFER.E CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP5:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP6:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.F")
+	field(INP, "$(P)OPLMBUFFER.F CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP6:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT1:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.G")
+	field(INP, "$(P)OPLMBUFFER.G CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT1:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT2:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.H")
+	field(INP, "$(P)OPLMBUFFER.H CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT2:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT3:OPLM")
 {
-	field(INP, "$(P)OPLMBUFFER.I")
+	field(INP, "$(P)OPLMBUFFER.I CP")
     field(DTYP, "Soft Channel")
-	field(SCAN, "1 second")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT3:OPLM")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 
 # LIMS
@@ -249,6 +269,8 @@ record(ai, "$(P)TEMP1:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP1:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP2:LIMS")
 {
@@ -257,6 +279,8 @@ record(ai, "$(P)TEMP2:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP2:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP3:LIMS")
 {
@@ -265,6 +289,8 @@ record(ai, "$(P)TEMP3:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP3:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP4:LIMS")
 {
@@ -273,6 +299,8 @@ record(ai, "$(P)TEMP4:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP4:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP5:LIMS")
 {
@@ -281,6 +309,8 @@ record(ai, "$(P)TEMP5:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP5:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)TEMP6:LIMS")
 {
@@ -289,6 +319,8 @@ record(ai, "$(P)TEMP6:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:TEMP6:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT1:LIMS")
 {
@@ -297,6 +329,8 @@ record(ai, "$(P)VOLT1:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT1:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT2:LIMS")
 {
@@ -305,6 +339,8 @@ record(ai, "$(P)VOLT2:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT2:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 record(ai, "$(P)VOLT3:LIMS")
 {
@@ -313,6 +349,8 @@ record(ai, "$(P)VOLT3:LIMS")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:VOLT3:LIMS")
     field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 
 # Enum for magnet status
@@ -331,6 +369,8 @@ record(mbbi, "$(P)MAGNETSTATUS")
 	field(TWST, "Cooling Down")
 	field(THST, "At Operating Temperature")
 	field(FRST, "A Fault Has Occurred")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
 }
 
 # SIM records
