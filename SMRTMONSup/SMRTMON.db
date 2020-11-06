@@ -25,46 +25,35 @@ record(calc, "$(P)STATBUFFER")
 {
 	field(CALC, "0")
 }
-
 record(calc, "$(P)LIMSBUFFER")
 {
 	field(CALC, "0")
 }
-
 record(calc, "$(P)OPLMBUFFER")
 {
 	field(CALC, "0")
 }
 
 # STAT, LIMS and OPLM commands
-record(aai, "$(P)STAT")
+record(bi, "$(P)STAT")
 {
 	field(INP, "@SMRTMON.proto getStat($(P)STATBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
-	field(NELM, "11")
-    field(SIML, "$(P)SIM")
-    field(SIOL, "$(P)SIM:STAT")
     field(SDIS, "$(P)DISABLE")
 }
-record(aai, "$(P)LIMS")
+record(bi, "$(P)LIMS")
 {
 	field(INP, "@SMRTMON.proto getLims($(P)LIMSBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
-	field(NELM, "9")
-    field(SIML, "$(P)SIM")
-    field(SIOL, "$(P)SIM:LIMS")
     field(SDIS, "$(P)DISABLE")
 }
-record(aai, "$(P)OPLM")
+record(bi, "$(P)OPLM")
 {
 	field(INP, "@SMRTMON.proto getOplm($(P)OPLMBUFFER) $(PORT)")
     field(SCAN, "1 second")
     field(DTYP, "stream")
-	field(NELM, "9")
-    field(SIML, "$(P)SIM")
-    field(SIOL, "$(P)SIM:OPLM")
     field(SDIS, "$(P)DISABLE")
 }
 
@@ -489,21 +478,6 @@ record(ai, "$(P)SIM:STATUS")
     field(DTYP, "Soft Channel")
 }
 record(ai, "$(P)SIM:MI")
-{
-    field(SCAN, "Passive")
-    field(DTYP, "Soft Channel")
-}
-record(ai, "$(P)SIM:STAT")
-{
-    field(SCAN, "Passive")
-    field(DTYP, "Soft Channel")
-}
-record(ai, "$(P)SIM:OPLM")
-{
-    field(SCAN, "Passive")
-    field(DTYP, "Soft Channel")
-}
-record(ai, "$(P)SIM:LIMS")
 {
     field(SCAN, "Passive")
     field(DTYP, "Soft Channel")
