@@ -1,0 +1,86 @@
+#
+# database file for a single channel on the HTS magnet Smart Monitor
+#
+
+# CHANNEL_NAME - the name of the channel eg TEMP1
+# CALC_LETTER - which value to get from the calc field eg A
+# UNITS - the unit of measurement
+# DESCRIPTION - brief description of record
+
+
+# Filtered PVs
+record(ai, "$(P)$(CHANNEL_NAME)")
+{
+	field(INP, "$(P)STATBUFFER.$(CALC_LETTER) CP MS")
+    field(DTYP, "Soft Channel")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:$(CHANNEL_NAME)")
+    field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
+	info(alarm, "SMRTMON")
+	field(HSV, "MINOR")
+	field(HHSV, "MAJOR")
+	field(DESC, "Value of $(DESCRIPTION)")
+	field(EGU, "$(UNITS)")
+}
+
+# OPLMS
+record(ai, "$(P)$(CHANNEL_NAME):OPLM")
+{
+	field(INP, "$(P)OPLMBUFFER.$(CALC_LETTER) CP MS")
+    field(DTYP, "Soft Channel")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:$(CHANNEL_NAME):OPLM")
+    field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "MEDIUM")
+	info(archive, "VAL")
+	field(FLNK, "$(P)$(CHANNEL_NAME):OPLM_PUSH")
+	field(DESC, "Safe operating limit of $(DESCRIPTION)")
+	field(EGU, "$(UNITS)")
+}
+record(ao, "$(P)$(CHANNEL_NAME):OPLM_PUSH")
+{
+	field(DOL, "$(P)$(CHANNEL_NAME):OPLM")
+	field(OUT, "$(P)$(CHANNEL_NAME).HIGH")
+	field(OMSL, "closed_loop")
+}
+
+# LIMS
+record(ao, "$(P)$(CHANNEL_NAME):LIMS_PUSH")
+{
+	field(DOL, "$(P)$(CHANNEL_NAME):LIMS")
+	field(OUT, "$(P)$(CHANNEL_NAME).HIHI")
+	field(OMSL, "closed_loop")
+}
+record(ai, "$(P)$(CHANNEL_NAME):LIMS")
+{
+	field(INP, "$(P)LIMSBUFFER.$(CALC_LETTER) CP MS")
+    field(DTYP, "Soft Channel")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:$(CHANNEL_NAME):LIMS")
+    field(SDIS, "$(P)DISABLE")
+	info(INTEREST, "MEDIUM")
+	info(archive, "VAL")
+	field(FLNK, "$(P)$(CHANNEL_NAME):LIMS_PUSH")
+	field(DESC, "Protection limit of $(DESCRIPTION)")
+	field(EGU, "$(UNITS)")
+}
+
+# SIM records
+record(ai, "$(P)SIM:$(CHANNEL_NAME)")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:$(CHANNEL_NAME):OPLM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:$(CHANNEL_NAME):LIMS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+

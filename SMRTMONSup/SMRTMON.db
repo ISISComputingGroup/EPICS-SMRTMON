@@ -1,0 +1,122 @@
+#
+# database file for the HTS magnet Smart Monitor
+#
+record(bo, "$(P)SIM")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "NO")
+    field(ONAM, "YES")
+    field(VAL, "$(RECSIM=0)")
+    field(PINI, "YES")
+}
+record(bo, "$(P)DISABLE")
+{
+    field(DESC, "Disable comms")
+    field(PINI, "YES")
+    field(VAL, "$(DISABLE=0)")
+    field(OMSL, "supervisory")
+    field(ZNAM, "COMMS ENABLED")
+    field(ONAM, "COMMS DISABLED")
+}
+
+# Buffer for STAT, LIMS and OPLM commands
+# Using INPL to propagate alarms
+record(calc, "$(P)STATBUFFER")
+{
+	field(CALC, "0")
+	field(INPL, "$(P)STAT MS")
+}
+record(calc, "$(P)LIMSBUFFER")
+{
+	field(CALC, "0")
+	field(INPL, "$(P)LIMS MS")
+}
+record(calc, "$(P)OPLMBUFFER")
+{
+	field(CALC, "0")
+	field(INPL, "$(P)OPLM MS")
+}
+
+# STAT, LIMS and OPLM commands
+record(bi, "$(P)STAT")
+{
+	field(INP, "@SMRTMON.proto getStat($(P)STATBUFFER) $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SDIS, "$(P)DISABLE")
+	field(FLNK, "$(P)STATBUFFER")
+}
+record(bi, "$(P)LIMS")
+{
+	field(INP, "@SMRTMON.proto getLims($(P)LIMSBUFFER) $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SDIS, "$(P)DISABLE")
+	field(FLNK, "$(P)LIMSBUFFER")
+}
+record(bi, "$(P)OPLM")
+{
+	field(INP, "@SMRTMON.proto getOplm($(P)OPLMBUFFER) $(PORT)")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(SDIS, "$(P)DISABLE")
+	field(FLNK, "$(P)OPLMBUFFER")
+}
+
+# Filtered PVs
+record(ai, "$(P)MI")
+{
+	field(INP, "$(P)STATBUFFER.J CP MS")
+    field(DTYP, "Soft Channel")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:MI")
+    field(SDIS, "$(P)DISABLE")
+	info(archive, "VAL")
+}
+record(ai, "$(P)STATUS")
+{
+	field(INP, "$(P)STATBUFFER.K CP MS")
+    field(DTYP, "Soft Channel")
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:STATUS")
+    field(SDIS, "$(P)DISABLE")
+	info(archive, "VAL")
+}
+
+# Enum for magnet status
+record(mbbi, "$(P)MAGNETSTATUS")
+{
+	field("INP", "$(P)STATUS CP MS")
+    field(DTYP, "Soft Channel")
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(FRVL, "4")
+	field(ZRST, "")
+	field(ONST, "At Room Temperature")
+	field(TWST, "Cooling Down")
+	field(THST, "At Operating Temperature")
+	field(FRST, "A Fault Has Occurred")
+	info(INTEREST, "HIGH")
+	info(archive, "VAL")
+	field(DESC, "The string value of the magnet status")
+}
+
+record(ai, "$(P)SIM:STATUS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(ai, "$(P)SIM:MI")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+record(mbbi, "$(P)SIM:MAGNETSTATUS")
+{
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+}
+
