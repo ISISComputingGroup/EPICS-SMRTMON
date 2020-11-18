@@ -80,7 +80,7 @@ record(ai, "$(P)STATUS")
 {
 	field(INP, "$(P)STATBUFFER.K CP MS")
 	field(EGU, "")
-	field(DESC, "Magnet status value"))
+	field(DESC, "Magnet status value")
     field(DTYP, "Soft Channel")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:STATUS")
