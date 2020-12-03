@@ -99,11 +99,15 @@ record(mbbi, "$(P)MAGNETSTATUS")
 	field(TWVL, "2")
 	field(THVL, "3")
 	field(FRVL, "4")
-	field(ZRST, "")
-	field(ONST, "At Room Temperature")
+	field(ZRST, "Off")
+	field(ONST, "Room Temp")
 	field(TWST, "Cooling Down")
-	field(THST, "At Operating Temperature")
-	field(FRST, "A Fault Has Occurred")
+	field(THST, "Operating Temp")
+	field(FRST, "Fault Occurred")
+
+    field(SIML, "$(P)SIM")
+    field(SIOL, "$(P)SIM:MAGNETSTATUS")
+    
 	info(INTEREST, "HIGH")
 	info(archive, "VAL")
 }
@@ -124,3 +128,19 @@ record(mbbi, "$(P)SIM:MAGNETSTATUS")
     field(DTYP, "Soft Channel")
 }
 
+record(bo, "$(P)MAGNET_POWER_ON")
+{
+    field(SCAN, "Passive")
+    field(DESC, "Magnet Energised or not")
+    field(VAL, 0)
+    field(ZNAM, "OFF")
+    field(ONAM, "ENERGISED")
+}
+
+record(calcout,"$(P)MAGNET_POWER_ON_CALC" ) {
+    field(DESC, "Check if manget if energised or not")
+    field(INPA, "$(P)MAGNETSTATUS CP MS")
+    field(CALC, "A>0")
+    field(OOPT, "On Change")
+    field(OUT, "$(P)MAGNET_POWER_ON PP")
+}
