@@ -2,6 +2,7 @@ Terminator = '\r';
 ReplyTimeout = 500;
 
 getStat {
+    ExtraInput = Ignore;
     out "STAT";
     in "%(\$1.A)f,%(\$1.B)f,%(\$1.C)f,%(\$1.D)f,%(\$1.E)f,%(\$1.F)f,%(\$1.G)f,%(\$1.H)f,%(\$1.I)f,%(\$1.J)f,%(\$1.K)f";
 }
